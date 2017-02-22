@@ -10,7 +10,7 @@ defmodule BlogExample.PostController do
   end
 
   def new(conn, _params) do
-    changeset = Post.changeset(%Post{})
+    changeset = Post.changeset(%Post{tags: []})
     render(conn, "new.html", changeset: changeset)
   end
 
