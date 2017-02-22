@@ -10,7 +10,6 @@ defmodule BlogExample.Repo.Migrations.CreatePostsAndTags do
 
     create table(:tags) do
       add :name, :string
-      timestamps()
     end
 
     create unique_index(:tags, [:name])
