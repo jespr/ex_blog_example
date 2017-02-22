@@ -42,6 +42,7 @@ defmodule BlogExample.PostController do
 
   def update(conn, %{"id" => id, "post" => post_params}) do
     post = Repo.get!(Post, id)
+    |> Repo.preload([:tags])
     changeset = Post.changeset(post, post_params)
 
     case Repo.update(changeset) do
